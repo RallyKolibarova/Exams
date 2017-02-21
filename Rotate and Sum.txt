@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+class RotateAndSum
+{
+	public static void Main (string[] args)
+	{
+		var array = Console.ReadLine ().Split (' ').
+			Select (int.Parse).ToArray ();
+		
+		var k = int.Parse (Console.ReadLine ());
+
+		var sum = new int[array.Length];
+
+		for (int i = 0; i < k; i++) {
+			int lastElem = array [array.Length - 1];
+			for (int j = array.Length - 1; j > 0; j--) {
+				array [j] = array [j - 1];
+			}
+			array [0] = lastElem;
+			for (int l = 0; l < array.Length; l++) {
+				sum [l] += array [l];
+			}
+		}
+		Console.WriteLine (string.Join(" ", sum));
+	}
+}

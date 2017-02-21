@@ -1,0 +1,40 @@
+using System;
+using System.Linq;
+
+class CompareCharArrays
+{
+	public static void Main (string[] args)
+	{
+		var arr1 = Console.ReadLine ().Split (' ').
+			Select (char.Parse).ToArray ();
+
+		var arr2 = Console.ReadLine ().Split (' ').
+			Select (char.Parse).ToArray ();
+
+		if (arr1.Length < arr2.Length) {
+			Console.WriteLine (string.Join ("", arr1));
+			Console.WriteLine (string.Join ("", arr2));
+		} else if (arr1.Length > arr2.Length) {
+			Console.WriteLine (string.Join("", arr2));
+			Console.WriteLine (string.Join("", arr1));
+		} else if(arr1.Length == arr2.Length){
+			for (int i = 0; i < Math.Min (arr1.Length, arr2.Length); i++) {
+				if (arr1 [i] > arr2 [i]) {
+					Console.WriteLine (string.Join("", arr2)); 
+					Console.WriteLine (string.Join("", arr1));
+					break;
+				}
+				if (arr2 [i] > arr1 [i]) {
+					Console.WriteLine (string.Join("", arr1));
+					Console.WriteLine (string.Join("", arr2));
+					break;
+				}
+				if (arr1 [i] == arr2 [i]) {
+					Console.WriteLine (string.Join("", arr1));
+					Console.WriteLine (string.Join("", arr2));
+					break;
+				}
+			}
+		}
+	}
+}
