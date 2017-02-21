@@ -1,0 +1,29 @@
+using System;
+
+class SendGlass
+{
+	public static void Main ()
+	{
+		int n = int.Parse (Console.ReadLine ());
+		char asterisk = '*';
+		char dot = '.';
+		int asteriskCount = n;
+		int dotCount = 0;
+
+		for (int i = 1; i <= n; i++) {
+			if (i <= (n + 1) / 2) {
+				Console.Write ("{0}{1}{0}", new string (dot, dotCount),
+					new String (asterisk, asteriskCount));
+				Console.WriteLine ();
+				dotCount++;
+				asteriskCount -= 2;
+			} else {
+				dotCount--;
+				asteriskCount += 2;
+				Console.Write ("{0}{1}{0}", new string (dot, dotCount - 1),
+					new String (asterisk, asteriskCount + 2));
+				Console.WriteLine ();
+			}
+		}
+	}
+}
