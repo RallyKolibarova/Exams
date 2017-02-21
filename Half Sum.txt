@@ -1,0 +1,26 @@
+using System;
+
+namespace HalfSum
+{
+    class HalfSum
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int sumFirst = 0;
+            for(int i=0; i < n; i++)
+            {
+                int elements = int.Parse(Console.ReadLine());
+                sumFirst += elements;
+            }
+            int sumLast = 0;
+            for (int i = 0; i < n; i++)
+            {
+                int elements = int.Parse(Console.ReadLine());
+                sumLast += elements;
+            }
+            if (sumFirst == sumLast) Console.WriteLine("Yes, sum={0}", sumFirst);
+            else Console.WriteLine("No, diff={0}", Math.Abs(sumFirst-sumLast));
+        }
+    }
+}
