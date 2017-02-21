@@ -1,0 +1,56 @@
+using System;
+
+class HouseWithAWindow
+{
+	public static void Main (string[] args)
+	{
+		int n = int.Parse (Console.ReadLine ());
+		int width = 2 * n - 1;
+		int roofHeight = n;
+		int baseHeight = n + 2;
+		int windowHeight = n / 2;
+		int windowWidth = n - 3;
+		char dot = '.';
+		char asterisk = '*';
+		int outerDots = n - 1;
+		int innerDots = 1;
+
+		if (n % 4 == 0) {
+			for (int i = 0; i < roofHeight; i++) {
+				if (i == 0) {
+					Console.Write ("{0}{1}{0}", new string (dot, outerDots),
+						new String (asterisk, 1));
+					Console.WriteLine ();
+				} else if (i > 0) {
+					outerDots--;
+					Console.Write ("{0}{1}{2}{1}{0}", new string (dot, outerDots),
+						new String (asterisk, 1), new string (dot, innerDots));
+					Console.WriteLine ();
+					innerDots += 2;
+				}
+
+			}
+			for (int i = 0; i < baseHeight; i++) {
+				if (i == 0) {
+					Console.Write ("{0}", new string (asterisk, width));
+					Console.WriteLine ();
+				} else if (i > 0 && i <= n / 4) {
+					Console.Write ("{0}{1}{0}", new string (asterisk, 1),
+						new String (dot, 2 * n - 3));
+					Console.WriteLine ();
+				} else if (i > n / 4 && i <= n / 4 + windowHeight) {
+					Console.Write ("{0}{1}{2}{1}{0}", new string (asterisk, 1),
+						new String (dot, n / 2), new string (asterisk, windowWidth));
+					Console.WriteLine ();
+				} else if (i > n / 4 + windowHeight && i <= baseHeight - 2) {
+					Console.Write ("{0}{1}{0}", new string (asterisk, 1),
+						new String (dot, 2 * n - 3));
+					Console.WriteLine ();
+				} else if(i == baseHeight - 1) {
+					Console.Write ("{0}", new string (asterisk, width));
+					Console.WriteLine ();
+				}
+			}
+		}
+	}
+}

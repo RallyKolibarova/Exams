@@ -1,0 +1,26 @@
+using System;
+
+class Electricity
+{
+	public static void Main ()
+	{
+		int floors = int.Parse (Console.ReadLine ());
+		int flats = int.Parse (Console.ReadLine ());
+		DateTime dayTime = DateTime.Parse (Console.ReadLine ());
+
+		int sumWats;
+		if (dayTime.Hour >= 14 && dayTime.Hour <= 18) {
+			double noonConsumption = (2 * 100.53) + (2 * 125.90);
+			sumWats = (int)(noonConsumption * flats * floors);
+		} else if (dayTime.Hour >= 19 && dayTime.Hour <= 23) {
+			double afternoonConsumption = (7 * 100.53) + (6 * 125.90);
+			sumWats = (int)(afternoonConsumption * flats * floors);
+		} else if (dayTime.Hour >= 0 && dayTime.Hour <= 8) {
+			double midnightConsumption = (1 * 100.53) + (8 * 125.90);
+			sumWats = (int)(midnightConsumption * flats * floors);
+		} else {
+			sumWats = 0;
+		}
+		Console.WriteLine (sumWats + " Watts");
+	}
+}
