@@ -1,0 +1,30 @@
+using System;
+
+class TravellerBob
+{
+	public static void Main ()
+	{
+		const int months = 12;
+		int weeksPerMonth = 4;
+
+		string kindOfYear = Console.ReadLine ();
+		int contractMonths = int.Parse (Console.ReadLine());
+		int familyMonths = int.Parse (Console.ReadLine());
+		int normalMonths = months - contractMonths - familyMonths;
+		int contractTravel = 3;
+		int familyTravel = contractTravel - 1;
+		int familyWeeksPerMonth = 2;
+
+		int oneContractTravel = weeksPerMonth * contractTravel;
+		int contractTravels = oneContractTravel * contractMonths;
+		int familyTravels = familyWeeksPerMonth * familyTravel * familyMonths;
+		double normalTravels = (double)(normalMonths * oneContractTravel * 3) / 5;
+		double totalTravels = contractTravels + familyTravels + normalTravels;
+		if (kindOfYear == "normal")
+			Console.WriteLine (Math.Floor (totalTravels));
+		else if (kindOfYear == "leap") {
+			double percentage = 0.05;
+			Console.WriteLine (Math.Floor(totalTravels + percentage * totalTravels));
+		}
+	}
+}
