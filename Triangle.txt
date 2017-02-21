@@ -1,0 +1,45 @@
+using System;
+
+namespace Triangle
+{
+    class Triangle
+    {
+        static void Main(string[] args)
+        {
+            System.Threading.Thread.CurrentThread.CurrentCulture =
+                System.Globalization.CultureInfo.InvariantCulture;
+
+            int Ax = int.Parse(Console.ReadLine());
+            int Ay = int.Parse(Console.ReadLine());
+
+            int Bx = int.Parse(Console.ReadLine());
+            int By = int.Parse(Console.ReadLine());
+
+            int Cx = int.Parse(Console.ReadLine());
+            int Cy = int.Parse(Console.ReadLine());
+
+            double distanceAB = (double)(Math.Sqrt(Math.Pow((Ax-Bx), 2) + Math.Pow((Ay-By), 2)));
+            double distanceBC = (double)(Math.Sqrt(Math.Pow((Bx-Cx), 2) + Math.Pow((By-Cy), 2)));
+            double distanceAC = (double)(Math.Sqrt(Math.Pow((Ax-Cx), 2) + Math.Pow((Ay-Cy), 2)));
+
+            double p = (distanceAB + distanceBC + distanceAC) / 2;
+
+            if (((distanceAB + distanceBC) > distanceAC) &&
+               ((distanceAB + distanceAC) > distanceBC) &&
+               ((distanceBC + distanceAC) > distanceAB))
+            {
+                Console.WriteLine("Yes");
+                double area = Math.Sqrt((double)(p * 
+                                                (p - distanceAB) * 
+                                                (p - distanceBC) * 
+                                                (p - distanceAC)));
+                Console.WriteLine("{0:F2}", area);
+            }
+            else
+            {
+                Console.WriteLine("No");
+                Console.WriteLine("{0:F2}", distanceAB);
+            }
+        }
+    }
+}
