@@ -1,0 +1,28 @@
+using System;
+
+class ConvertSpeedUnits
+{
+	public static void Main (string[] args)
+	{
+		int distanceInMeters = int.Parse (Console.ReadLine ());
+		int hours = int.Parse (Console.ReadLine ());
+		int minutes = int.Parse (Console.ReadLine ());
+		int seconds = int.Parse (Console.ReadLine ());
+
+		float secondsAll = hours * 60 * 60 + minutes * 60 + seconds;
+
+		float speedMetersPerSecond = distanceInMeters / secondsAll;
+
+		float kilometers = distanceInMeters / 1000.0f;
+		float hoursAll = hours + minutes / 60.0f + seconds / (60.0f * 60.0f);
+
+		float speedKmPerHour = kilometers / hoursAll;
+
+		float miles = distanceInMeters / 1609.0f;
+
+		float milesPerHour = miles / hoursAll;
+		Console.WriteLine (speedMetersPerSecond);
+		Console.WriteLine (speedKmPerHour);
+		Console.WriteLine (milesPerHour);
+	}
+}

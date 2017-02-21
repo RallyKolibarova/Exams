@@ -1,0 +1,14 @@
+using System;
+
+class BooleanVariable
+{
+	public static void Main (string[] args)
+	{
+		string variable = Console.ReadLine ();
+		bool variable1 = Convert.ToBoolean (variable);
+		if(variable1)
+			Console.WriteLine ("Yes");
+		else
+			Console.WriteLine ("No");
+	}
+}

@@ -1,0 +1,22 @@
+using System;
+using System.Numerics;
+
+class CenturesToNanoseconds
+{
+	public static void Main (string[] args)
+	{
+		int centuries = int.Parse (Console.ReadLine ());
+		Console.WriteLine ();
+		int years = 100 * centuries;
+		BigInteger days = (BigInteger)(365.2422 * years);
+		BigInteger hours = 24 * days;
+		BigInteger minutes = 60 * hours;
+		BigInteger seconds = 60 * minutes;
+		BigInteger milliseconds = 1000 * seconds;
+		BigInteger microseconds = 1000 * milliseconds;
+		BigInteger nanoseconds = 1000 * microseconds;
+		Console.WriteLine ("{0} centuries = {1} years = {2} days = {3} " +
+			"hours = {4} minutes = {5} seconds = {6} milliseconds = {7} microseconds = {8} nanoseconds", centuries, years, days, hours, minutes, seconds, 
+			milliseconds, microseconds, nanoseconds);
+	}
+}

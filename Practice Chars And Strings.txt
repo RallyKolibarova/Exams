@@ -1,0 +1,18 @@
+using System;
+
+class CharactersAndStrings
+{
+	public static void Main (string[] args)
+	{
+		string variable = "Software University";
+		char charakter = 'B';
+		char charakter1 = 'y';
+		char charakter2 = 'e';
+		string variable1 = "I love programming";
+		Console.WriteLine (variable);
+		Console.WriteLine (charakter);
+		Console.WriteLine (charakter1);
+		Console.WriteLine (charakter2);
+		Console.WriteLine (variable1);
+	}
+}

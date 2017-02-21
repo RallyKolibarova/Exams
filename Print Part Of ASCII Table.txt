@@ -1,0 +1,15 @@
+using System;
+
+class PrintPartOfASCIITable
+{
+	public static void Main (string[] args)
+	{
+		int inputFirst = int.Parse (Console.ReadLine ());
+		int inputSecond = int.Parse (Console.ReadLine ());
+
+		for (int i = inputFirst; i <= inputSecond; i++) {
+			Console.Write ((char)i + " ");
+		}
+		Console.WriteLine ();
+	}
+}

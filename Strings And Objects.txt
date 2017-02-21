@@ -1,0 +1,13 @@
+using System;
+
+class StringsAndObjects
+{
+	public static void Main (string[] args)
+	{
+		string variable1 = "Hello";
+		string variable2 = "World";
+		object name = variable1 + " " + variable2;
+		string nameConcat = name.ToString ();
+		Console.WriteLine (nameConcat);
+	}
+}

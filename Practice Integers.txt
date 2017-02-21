@@ -1,0 +1,23 @@
+using System;
+
+class IntegerNumbers
+{
+	public static void Main (string[] args)
+	{
+		sbyte variable = -100;
+		Console.WriteLine (variable);
+		byte variable1 = 128;
+		Console.WriteLine (variable1);
+		short variable2 = -3540;
+		Console.WriteLine (variable2);
+		ushort variabe3 = 64876;
+		Console.WriteLine (variabe3);
+		uint variable4 = 2147483648;
+		Console.WriteLine (variable4);
+		int variable5 = -1141583228;
+		Console.WriteLine (variable5);
+		long variable6 = -1223372036854775808;
+		Console.WriteLine (variable6);
+
+	}
+}
