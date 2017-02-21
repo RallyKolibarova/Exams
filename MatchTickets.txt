@@ -1,0 +1,191 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MatchTickets
+{
+    class MatchTickets
+    {
+        static void Main(string[] args)
+        {
+            double bujet = double.Parse(Console.ReadLine());
+            string category = Console.ReadLine();
+            int countPeopleInGroup = int.Parse(Console.ReadLine());
+
+            double VIPcost = 499.99;
+            double Normalcost = 249.99;
+
+            double moneyTransport = 0.0;
+            double difference = 0.0;
+            double costTicket = 0.0;
+            double result = 0.0;
+
+
+            if (countPeopleInGroup >= 1 && countPeopleInGroup <= 4)
+            {
+                moneyTransport = 0.75 * bujet;
+                difference = bujet - moneyTransport;
+                if(category == "VIP")
+                {
+                    costTicket = countPeopleInGroup * VIPcost;
+                    if(costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    } else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                } else if(category == "Normal")
+                {
+                    costTicket = countPeopleInGroup * Normalcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+
+            } else if(countPeopleInGroup >= 5 && countPeopleInGroup <= 9)
+            {
+                moneyTransport = 0.60 * bujet;
+                difference = bujet - moneyTransport;
+                if (category == "VIP")
+                {
+                    costTicket = countPeopleInGroup * VIPcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+                else if (category == "Normal")
+                {
+                    costTicket = countPeopleInGroup * Normalcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+
+            } else if(countPeopleInGroup >= 10 && countPeopleInGroup <= 24)
+            {
+                moneyTransport = 0.5 * bujet;
+                difference = bujet - moneyTransport;
+                if (category == "VIP")
+                {
+                    costTicket = countPeopleInGroup * VIPcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+                else if (category == "Normal")
+                {
+                    costTicket = countPeopleInGroup * Normalcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+
+            } else if(countPeopleInGroup >= 25 && countPeopleInGroup <= 49)
+            {
+                moneyTransport = 0.4 * bujet;
+                difference = bujet - moneyTransport;
+                if (category == "VIP")
+                {
+                    costTicket = countPeopleInGroup * VIPcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+                else if (category == "Normal")
+                {
+                    costTicket = countPeopleInGroup * Normalcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+
+            } else if(countPeopleInGroup >= 50)
+            {
+                moneyTransport = 0.25 * bujet;
+                difference = bujet - moneyTransport;
+                if (category == "VIP")
+                {
+                    costTicket = countPeopleInGroup * VIPcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+                else if (category == "Normal")
+                {
+                    costTicket = countPeopleInGroup * Normalcost;
+                    if (costTicket >= difference)
+                    {
+                        result = costTicket - difference;
+                        Console.WriteLine("Not enough money! You need {0:F2} leva.", result);
+                    }
+                    else
+                    {
+                        result = difference - costTicket;
+                        Console.WriteLine("Yes! You have {0:F2} leva left.", result);
+                    }
+                }
+            }
+        }
+    }
+}

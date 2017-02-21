@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Money
+{
+    class Money
+    {
+        static void Main(string[] args)
+        {
+            int bitcoins = int.Parse(Console.ReadLine());
+            double uan = double.Parse(Console.ReadLine());
+            double commision = double.Parse(Console.ReadLine());
+
+
+            double leva = (double)(bitcoins * 1168 + (uan * 0.15) * 1.76);
+            double evro = leva / 1.95;
+            double result = evro - (commision/100) * evro;
+
+            Console.WriteLine(result);
+            
+
+        }
+    }
+}

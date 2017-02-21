@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BackToThePast
+{
+    class BackToThePast
+    {
+        static void Main(string[] args)
+        {
+            double inherit = double.Parse(Console.ReadLine());
+            int yearLive = int.Parse(Console.ReadLine());
+
+
+            int yearIvanBorn = 18;
+            double moneyForPayment = 12000.0;
+            double left = 0.0;
+
+            int even = 1800;
+
+            left = inherit - moneyForPayment;
+
+            for (int i = 1801; i <= yearLive; i++)
+            {
+                if(i % 2 == 0)
+                {
+                    left = left - moneyForPayment;
+                }
+                else if(i % 2 != 0)
+                {
+                    left = left - (moneyForPayment + 50 * (yearIvanBorn + (i - even)));
+                }
+            }
+            
+
+            if(left >= 0)
+            {
+                Console.WriteLine("Yes! He will live a carefree life and will have {0:F2} dollars left.", left);
+            }
+            else
+            {
+                Console.WriteLine("He will need {0:F2} dollars to survive.", Math.Abs(left));
+            }
+
+        }
+    }
+}
