@@ -1,0 +1,29 @@
+using System;
+
+class PiggyBank
+{
+	public static void Main ()
+	{
+		const int months = 12;
+		const int days = 30;
+
+		int tankPrice = int.Parse (Console.ReadLine());
+		int partyDays = int.Parse (Console.ReadLine());
+
+		double saveMoney = (double)2;
+		double spendMoney = (double)5;
+		int normalDays = days - partyDays;
+
+		double moneyPerMonth = (double)(normalDays * saveMoney - partyDays * spendMoney);
+		if (partyDays > 8)
+			Console.WriteLine ("never");
+		else {
+			double neededMonths = (double)tankPrice / moneyPerMonth;
+			int result = (int)Math.Ceiling (neededMonths);
+			int Xyears = (int)result / months;
+			int Ymonths = (int)result % months;
+			Console.WriteLine ("{0} years, {1} months", 
+				Xyears, Ymonths);
+		}
+	}
+}
