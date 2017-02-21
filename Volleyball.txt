@@ -1,0 +1,28 @@
+using System;
+
+class Volleyball
+{
+	public static void Main ()
+	{
+		int weekendsPerYear = 48;
+		int playSundays = 1;
+
+		string year = Console.ReadLine ();
+		int holidays = int.Parse (Console.ReadLine());
+		int hometownWeekends = int.Parse (Console.ReadLine());
+
+		int normalWeekends = weekendsPerYear - hometownWeekends;
+		double volleyballPlays;
+		double percentage = 1.15;
+		volleyballPlays = (double)(hometownWeekends * playSundays) +
+			(double)((normalWeekends * 3) / (double)4) + 
+			(double)((holidays * 2) / (double)3);
+		
+		if (year == "normal") {
+			Console.WriteLine ((int)Math.Floor (volleyballPlays));
+		} else if (year == "leap") {
+			volleyballPlays = percentage * volleyballPlays;
+			Console.WriteLine ((int)Math.Floor(volleyballPlays));
+		}
+	}
+}
