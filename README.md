@@ -1,2 +1,2 @@
-# Exams
+# Exams Softuni
 PreparationOfSoftUni
